@@ -1,5 +1,6 @@
 import java.util.List;
 
+import controllers.LibroController;
 import models.Book;
 
 public class App {
@@ -31,5 +32,14 @@ public class App {
                 new Book("Ciberseguridad", "Pedro León", 2023),
                 new Book("Blockchain", "Marta Ríos", 2021),
                 new Book("Machine Learning", "Cristina Gómez", 2022));
+        LibroController controller = new LibroController();
+        var resultado = controller.procesarLibros(libros);
+        resultado.forEach((key, value) -> {
+            System.out.println("Clave: " + key);
+            System.out.println("Valor: " + value);
+        });
+        System.out.println("Total de libros procesados: " + resultado.size());
+        System.out.println("Libros únicos: " + resultado.keySet().size());
+        System.out.println("Libros duplicados: " + (libros.size() - resultado.size()));
     }
 }
