@@ -35,8 +35,8 @@ public class App {
         LibroController controller = new LibroController();
         var resultado = controller.procesarLibros(libros);
         resultado.forEach((key, value) -> {
-            System.out.println("Clave: " + key);
-            System.out.println("Valor: " + value);
+            System.out.println(key);
+            System.out.println( value);
         });
         System.out.println("Total de libros procesados: " + resultado.size());
         System.out.println("Libros únicos: " + resultado.keySet().size());
